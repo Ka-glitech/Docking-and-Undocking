@@ -54,13 +54,17 @@ function draw() {
       spacecraft.addImage(sc3Image);
     }
   }
-  //Note to Ariya Vijay Ma'am: Cannot understand the if condition: Something is wrong here.
-  // Please check the output
-  //Problem is in this code only. This code also affected the KeyDown Keys.
-    if(spacecraft.y <= (iss.y+80) && spacecraft.x <= (iss.x-15)){ 
-      hasDocked = true; 
-      textSize(25); 
-      fill("white"); 
-      text("Docking Successful!", 200, 300); 
+  //Still seems to be the same problem;
+  //Console says:
+  // Uncaught TypeError: Cannot read property 'touches' of undefined
+  //   at p5._updateTouchCoords (p5.js:59561)
+  //   at p5._updateNextTouchCoords (p5.play.js:265)
+  //   at p5._onmousedown (p5.play.js:302)
+  if(spacecraft.y <= (iss.y+70) && spacecraft.x <= (iss.x-10)){
+    hasDocked = true;
+    textSize(25);
+    fill("white")
+    text("Docking Successful!", 200, 300);
   }
+  drawSprites();
 }
