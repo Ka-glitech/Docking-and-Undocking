@@ -20,7 +20,7 @@ function preload() {
 
 function setup() {
   createCanvas(800,400);
-  iss = createSprite(400, 200, 50, 50);
+  iss = createSprite(330,150);
   iss.addImage(issImage);
   iss.scale= 0.40;
   spacecraft = createSprite(285,240);
@@ -54,12 +54,6 @@ function draw() {
       spacecraft.addImage(sc3Image);
     }
   }
-  //Still seems to be the same problem;
-  //Console says:
-  // Uncaught TypeError: Cannot read property 'touches' of undefined
-  //   at p5._updateTouchCoords (p5.js:59561)
-  //   at p5._updateNextTouchCoords (p5.play.js:265)
-  //   at p5._onmousedown (p5.play.js:302)
   if(spacecraft.y <= (iss.y+70) && spacecraft.x <= (iss.x-10)){
     hasDocked = true;
     textSize(25);
